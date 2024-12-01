@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/CSS/index_style.css">
+
+  <title>게시판</title>
+</head>
+<body>
+  <div id="top">
+    <h1>게시판</h1>
+  </div>
+  <a href="/create"><div class="button">게시글 작성</div></a>
+  <table>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>설명</th>
+        <th>작성일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% posts.forEach(post => { %>
+        <tr>
+          <td><%= post.id %></td>
+          <td><%= post.title %></td>
+          <td><%= post.content %></td>
+          <td><%= post.created_at %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
