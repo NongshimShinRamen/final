@@ -60,28 +60,3 @@ app.post('/create', (req, res) => {
 app.listen(port, () => {
   console.log(`서버가 http://localhost:${port}에서 실행 중입니다.`);
 });
-
-
-
-
-
-
-
-const express = require('express');
-const path = require('path');
-
-// 정적 파일 제공
-app.use(express.static(path.join(__dirname, 'public')));
-
-// EJS 설정
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-// 기본 라우트
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
-});
